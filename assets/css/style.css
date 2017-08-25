@@ -1,0 +1,197 @@
+/*Background*/
+html{
+	height: 100%;
+	background-color: black;
+}
+
+.background{
+	position:fixed;
+	height:100%;
+	width:100%;
+	z-index:-1;
+	opacity: 0.5;
+	filter: saturate(130%);
+}
+
+.quote{
+	position:fixed;
+	top:28%;
+	left:30%;
+	color:white;
+	padding:5%;
+	width:30%;
+	font-size:45pt;
+	text-align: center;
+}
+
+/*Button layout+effects*/
+#hellaButtons{
+  width: 90%;
+}
+
+.btn{
+	margin: 1% 1%;
+  background-color: #4CAF50; /* Green */
+  font-family: 'Kaushan Script', cursive;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 19px;
+  font-weight: bold;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+}
+
+.btn:hover{
+	background-color:transparent;
+	background-image:url(../avocado_icon.png);
+	background-size: 100% 50px;
+	color:#4CAF50;
+	box-shadow: 2px 2px 6px #4CAF50,
+						 	-2px 2px 6px #4CAF50,
+						  2px -2px 6px #4CAF50,
+						  -2px -2px 6px #4CAF50;
+	cursor: pointer;
+}
+
+/*Right column*/
+.background-right{
+	position:fixed;
+	background-color: black;
+	right:0;
+	top:0;
+	height:100%;
+	width: 13%;
+	opacity: 0.5;
+}
+
+form#hella-form{
+	position:fixed;
+	right:0;
+	top:0;
+	float: right;
+	height:100%;
+	padding: 5% 1% 0 1%;
+	font-family: 'Kaushan Script', cursive;
+	color: #4CAF50;
+	font-size: 19px;
+	z-index:1;
+	font-weight: bold;
+}
+
+input#hella-input{
+	background-color:transparent;
+	font-family: 'Kaushan Script', cursive;
+	color: white;
+	border: 2px solid #4CAF50;
+  border-radius: 8px;
+  margin: 7% 0;
+  padding:3px;
+  padding: 7px;
+  font-size: 17px;
+}
+
+
+#addMore{
+  background-color: #4CAF50; /* Green */
+  font-family: 'Kaushan Script', cursive;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: bold;
+	border-radius: 8px;
+	border: 1px solid #4CAF50;
+	transition-duration: 0.4s;
+}
+
+#addMore:hover{
+	color:#4CAF50;
+	background-color:transparent;
+	border: 1px solid #4CAF50;
+	cursor: pointer;
+}
+
+.twitter{
+	position:fixed;
+	width:10%;
+	right:2%;
+	top:28%;
+	opacity:0.7;
+	z-index:1;
+}	
+
+/*Polaroid/GIF Generator*/
+#pix-place{
+	width: 87%;
+}
+
+.polaroid{
+	position: relative;
+	float:left;
+	margin: 5px;
+	margin-left: 1%;
+	display: inline-block;
+	font-family: 'Rock Salt', cursive;
+	transition: 0.4s;
+}
+
+.polaroid:hover{
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
+img.gif-click {
+  border: 10px solid #F3F3EB;
+  border-bottom: 45px solid #F3F3EB;
+  box-shadow: 3px 3px 6px black;
+  filter: saturate(60%);
+}
+ 
+.rates{
+	position:absolute;
+	text-align: center;
+  bottom: 7%;
+  width: 100%;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+/*Animations*/
+.fade-in-background{
+	animation: fadeinone 3s;
+}
+
+.fade-in-rest{
+	animation: fadeintwo 5s;
+}
+
+	/*Added because opacity not set to 0.5 immediately*/
+.fade-in-just-the-right-background{
+	animation: fadeinfuckwhy 5s;
+}
+
+
+@keyframes fadeinone {
+  0%   { opacity: 0; }
+	20%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeintwo {
+  0% 	 { opacity: 0; }
+  66%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeinfuckwhy {
+  0% 	 { opacity: 0; }
+  66%  { opacity: 0; }
+  100% { opacity: 0.5; }
+}

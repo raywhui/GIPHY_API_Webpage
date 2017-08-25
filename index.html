@@ -1,125 +1,47 @@
 <!DOCTYPE html>
+<!--what is a RESTful API?-->
 <html>
 <head>
 	<title>HIPSTERS GUIDE TO GIFS</title>
 
+	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+
 	<script
   src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Rock+Salt" rel="stylesheet">
+
 </head>
+
+	<img src="https://media1.s-nbcnews.com/i/newscms/2017_11/1201717/avocado-toast-poached-eggs-today-170316-tease_3db8b4d7d2f33ae1a0c4f51e43df7b62.jpg" class="background">
+	<div class="quote fade-in-background">Avocados Are Why You Can't Afford a Home.</div>
+
+
 <body>
-	<div id="hellaButtons">
 
-	</div>
-	<form id="hella-form">
+	<div id="hellaButtons" class="fade-in-rest"></div>
+
+	<form id="hella-form" class="fade-in-rest">
 		<label for="hella-input">Add Hella Stuff</label><br>
-			<input id="hella-input" type="text" placeholder="FEED ME"><br>
-
-			<input id="addMore" type="submit" value="submit">
+			<input id="hella-input" type="text" placeholder="Feed Me Avocados"><br>
+			
+			<input id="addMore" type="submit" value="Spread Avocado">
 	</form>
 
-	<div id="pix-place"></div>
+	<div class="background-right fade-in-just-the-right-background"></div>
+	<!--Twitter Embed-->
+	<div class='twitter fade-in-just-the-right-background'>
+	  <a class="twitter-timeline"  href="https://twitter.com/hashtag/avocadotoast" data-widget-id="900983104352927744">#avocadotoast Tweets</a>
+	</div>
 
-	<script>
-		var hellaArray = ['Vape','Hoverboard','Records','Glasses','Mustache','Avocado Toast','Coffee','Beards','Bikes','EDM','Totes','FOMO'];
-
-		function addingMoreButtons(){
-			$('#hellaButtons').empty();
-			for (var i=0; i < hellaArray.length; i++){
-				var hipButtons = $('<button>');
-				hipButtons.text(hellaArray[i]);
-				hipButtons.addClass('btn');
-				hipButtons.attr('value', hellaArray[i]);
-				$('#hellaButtons').append(hipButtons);
-			};
-		};
-
-		addingMoreButtons();
+	<!--JS related to Twitter feed-->
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	  </script>
 
 
-		$(document).on('click', 'input#addMore', function(event){
-			event.preventDefault();
-			var addButton = $('#hella-input').val().trim();
+	<div id="pix-place" class="fade-in-rest"></div>
 
-			console.log(addButton)
-			hellaArray.push(addButton);
-			console.log(hellaArray);
-			addingMoreButtons();
-		});
-		console.log(hellaArray);
-
-		var url = "https://api.giphy.com/v1/gifs/search?api_key=5ac4fb712bdb4b6f9dc8f599a9fc218f";
-
-		//Requests specific button value for GIPHY API
-		$(document).on('click', 'button.btn', function(){
-
-			//emptys gif place area
-			$('#pix-place').empty();
-
-			var clickedVal = $(this).val()
-			console.log(clickedVal)
-
-			//takes text value in button and uses that for q
-			url += "&" + $.param({
-				'q': clickedVal,
-				'limit': 10
-			})
-			//Response for GIPHY API
-			$.ajax({
-				url: url,
-				method: "GET"
-			}).done(function(response){
-				console.log(response.data[0].rating);
-				for (var j=0; j < response.data.length; j++){
-					//object call for ratings
-					var getRating = response.data[j].rating;
-					//object call for fixed_height_still.url
-					var getPixStill = response.data[j].images.fixed_height_still.url;
-					//object call for fixed_height.url
-					var getPixMoving = response.data[j].images.fixed_height.url;
-					//relevant tags
-					var divStuff = $('<div>');
-					var gifTag = $('<img>');
-
-					//adds attributes to imgs
-					gifTag.addClass('gif-click');
-					gifTag.attr('src', getPixStill);
-					gifTag.data('current-status', 'still');
-					gifTag.data('animated', getPixMoving);
-					gifTag.data('still', getPixStill);
-
-					//appends gifs+ratings to DOM
-					divStuff.append('Rating: ' + getRating);
-					divStuff.append(gifTag);
-					$('#pix-place').append(divStuff);
-				}//for loop
-			})//done function(response)
-		}); // btn click
-		
-		//event delegation? https://stackoverflow.com/questions/16893043/jquery-click-event-not-working-after-adding-class
-		$(document).on('click','img.gif-click' ,function(){
-			console.log('clickity')
-
-			//pulls data of data-current-status
-			var state = $(this).data('current-status');
-
-			//why is there a delay? prob due to lag to retrieve gif
-			if(state === 'still'){
-
-				//changes src to data-animated + current-status to animated
-				var animationOn = $(this).data('animated');
-				$(this).attr('src', animationOn);
-				$(this).data('current-status', 'animated');
-
-			} else if(state === 'animated'){ 
-
-				//changes src to data-still + current-status to still
-				var animationOff = $(this).data('still');
-				$(this).attr('src', animationOff);
-				$(this).data('current-status', 'still');
-			};
-		});//document click img.gif-click
-
-
-	</script>
+	<script src="./assets/javascript/javascript.js"></script>
 </body>
 </html>
