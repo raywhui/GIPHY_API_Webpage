@@ -26,7 +26,7 @@ html{
 
 /*Button layout+effects*/
 #hellaButtons{
-  width: 90%;
+  width: 87%;
 }
 
 .btn{
@@ -89,7 +89,6 @@ input#hella-input{
 	border: 2px solid #4CAF50;
   border-radius: 8px;
   margin: 7% 0;
-  padding:3px;
   padding: 7px;
   font-size: 17px;
 }
@@ -177,6 +176,14 @@ img.gif-click {
 	animation: fadeinfuckwhy 5s;
 }
 
+.fade-in-pix{
+	animation: picturefacein 1s;
+}
+
+@keyframes picturefacein {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
 
 @keyframes fadeinone {
   0%   { opacity: 0; }

@@ -56,7 +56,7 @@ $(document).on('click', 'button.btn', function(){
 			//object call for fixed_height.url
 			var getPixMoving = response.data[j].images.fixed_height.url;
 			//relevant tags
-			var spanStuff = $('<div class="polaroid">');
+			var spanStuff = $('<div class="polaroid fade-in-pix">');
 			var ratingDiv = $('<div class="rates">');
 			var gifTag = $('<img>');
 
@@ -99,12 +99,3 @@ $('#pix-place').on('click', 'img.gif-click' ,function(){
 		$(this).data('current-status', 'still');
 	};
 });//document click img.gif-click
-
-//Twtter API
-$.ajax({
-		url: 'https://stream.twitter.com/1.1/statuses/filter.json?track=avocadotoast',
-		method: "GET"
-	}).done(function(response){
-		console.log(response)
-
-	});
