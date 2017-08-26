@@ -64,7 +64,7 @@ html{
 	right:0;
 	top:0;
 	height:100%;
-	width: 13%;
+	width: 206px;
 	opacity: 0.5;
 }
 
@@ -119,8 +119,9 @@ input#hella-input{
 
 .twitter{
 	position:fixed;
-	width:10%;
-	right:2%;
+	width:160px;
+	right:0;
+	margin-right:2%;
 	top:28%;
 	opacity:0.7;
 	z-index:1;
