@@ -9,9 +9,9 @@ Click here to find out: https://raywhui.github.io/GIPHYcado/
 
 Millenials are quite difficult to understand. Luckily, this app isn't. You click on one of the buttons on top and it will generate the first 10 GIFs related to that word. The image will be still, so if you click on the polaroids, they will start to move. Simply click on them again to have them stop. You can also add new buttons to the list by typing it into the input bar on the right. There is also a Twitter feed of anyone who puts in the hashtag #avocadotoast, so you can track any of those sneaky millenials.
 
-![Bamazon Manager Add Product](https://raw.githubusercontent.com/raywhui/Bamazon/master/screen1a.png)
+![Bamazon Manager Add Product](https://raw.githubusercontent.com/raywhui/GIPHYcado/master/screen1a.png)
 
-![Bamazon Manager Add Product](https://raw.githubusercontent.com/raywhui/Bamazon/master/screen2a.png)
+![Bamazon Manager Add Product](https://raw.githubusercontent.com/raywhui/GIPHYcado/master/screen2a.png)
 
 
 ### Installing
